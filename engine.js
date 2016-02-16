@@ -9,9 +9,9 @@ module.exports = function(source, config){
     function loadViews(source) {
         views = {};
         for (let item of source.flattenDeep()) {
-            views[item.handle] = item.content;
+            views['@' + item.handle] = item.content;
             if (item.alias) {
-                views[item.alias] = item.content;
+                views['@' + item.alias] = item.content;
             }
         }
     }
