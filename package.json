@@ -1,18 +1,18 @@
 {
-  "name": "@frctl/mustache-engine",
+  "name": "@frctl/mustache-adapter",
   "version": "0.2.0",
   "description": "Use Mustache templates with Fractal.",
-  "main": "engine.js",
+  "main": "adapter.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/frctl/mustache-engine.git"
+    "url": "https://github.com/frctl/mustache-adapter.git"
   },
   "author": "Clearleft <dev@clearleft.com> (http://clearleft.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/frctl/mustache-engine/issues"
+    "url": "https://github.com/frctl/mustache-adapter/issues"
   },
-  "homepage": "https://github.com/frctl/mustache-engine",
+  "homepage": "https://github.com/frctl/mustache-adapter",
   "dependencies": {
     "lodash": "^4.0.0",
     "mustache": "^2.2.1"
