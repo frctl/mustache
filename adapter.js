@@ -6,7 +6,7 @@ module.exports = function(source, config){
 
     let views = null;
 
-    function loadViews(source) {
+    function loadViews() {
         views = {};
         for (let item of source.flattenDeep()) {
             views['@' + item.handle] = item.content;
