@@ -1,29 +1,24 @@
 'use strict';
 
-const Mustache = require('mustache');
+const Adapter  = require('@frctl/fractal').Adapter;
 
-module.exports = function(source, config){
+class MustacheAdapter extends Adapter {
 
-    let views = null;
-
-    function loadViews() {
-        views = {};
-        for (let item of source.flattenDeep()) {
-            views['@' + item.handle] = item.content;
-            if (item.alias) {
-                views['@' + item.alias] = item.content;
-            }
-        }
+    render(path, str, context, meta) {
+        let views = {};
+        this.views.forEach(view => (views[view.handle] = view.content));
+        return Promise.resolve(this.engine.render(str, context, views));
     }
 
-    source.on('loaded', loadViews);
-    source.on('changed', loadViews);
+}
+
+module.exports = function() {
 
     return {
-        engine: Mustache,
-        render: function(path, str, context, meta){
-            if (!views === null) loadViews(source);
-            return Promise.resolve(Mustache.render(str, context, views));
+
+        register(source, app) {
+            return new MustacheAdapter(require('mustache'), source);
         }
     }
+
 };

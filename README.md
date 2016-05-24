@@ -1,22 +1,18 @@
 # Mustache Adapter
 
-Use Mustache templates with [Fractal](http://frctl.github.io).
+Use Mustache templates with [Fractal](http://github.com/frctl/fractal).
 
 ## Usage
 
 Install via NPM:
 
 ```bash
-npm i @frctl/mustache-adapter --save
+npm i @frctl/mustache --save
 ```
 
-Then add configuration details into your fractal.js file:
+Then configure your Fractal instance:
 
 ```js
-const fractal = require('@frctl/fractal');
-
-fractal.engine('mustache', '@frctl/mustache-adapter'); // register the mustache engine adapter
-
-fractal.set('components.engine', 'mustache'); // use the mustache handler
-fractal.set('components.ext', '.mustache'); // look for files with a .mustache file extension
+fractal.components.engine('@frctl/mustache'); // register the mustache engine adapter for your components
+fractal.components.set('ext', '.mustache'); // look for files with a .mustache file extension
 ```
