@@ -1,6 +1,6 @@
 {
   "name": "@frctl/mustache",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0",
   "description": "Use Mustache templates with Fractal.",
   "main": "adapter.js",
   "repository": {
